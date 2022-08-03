@@ -75,7 +75,6 @@ function chekToNextStep(prevArrLength, arrLength) {
 }
 
 function reverseAndSquareArr(arr) {
-    console.log('reverse', arr)
 
     arr.forEach((item, index) => {
         const buff = +item.toString().split("").map(Number).reverse().join("")
