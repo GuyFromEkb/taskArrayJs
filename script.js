@@ -1,5 +1,5 @@
 // const ARRAY = [9, 3212555]
-const ARRAY = [8, 41, 55, 61, 1, 8, 27, 37, 39, 55, 519, 309, 77, 132, 213,]
+const ARRAY = [13, 41, 55, 61, 1, 84, 27, 37, 39, 55, 519, 309, 77, 132, 213,]
 // const ARRAY = [41, 55, 61, 1, 8, 27, 37, 39]
 
 changeArr(ARRAY)
@@ -15,7 +15,6 @@ function changeArr(arr) {
 
     changeArr(arr)
 }
-
 
 function filterArr(arr) {
     arr.sort((a, b) => a - b)
@@ -39,9 +38,7 @@ function filterArr(arr) {
             deleteMatch.forEach((item, index) => arr.splice(item - index, 1))
             arr.splice(i, 1)
             i--
-
         }
-        // console.log(arr)
 
     }
     console.log(arr)
