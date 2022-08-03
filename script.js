@@ -1,10 +1,9 @@
-// const ARRAY = [9, 3212555]
-const ARRAY = [8, 41, 55, 8, 61, 27, 37, 39, 55, 519, 309, 77, 132, 213,]
-// const ARRAY = [41, 55, 61, 1, 8, 27, 37, 39]
+// const ARRAY = [9, 3212555,819,4,5]
+// const ARRAY = [8, 41, 55, 8, 61, 27, 37, 39, 55, 519, 309, 77, 132, 213,]
+const ARRAY = [41, 55, 61, 1, 8, 27, 37, 39]
 
-let newARR = changeArr(ARRAY)
-
-console.log(newARR)
+let newArr = changeArr(ARRAY)
+console.log('return:', newArr)
 
 function changeArr(arr) {
 
@@ -29,24 +28,23 @@ function filterArr(arr) {
 
     for (let i = 0; i < arr.length; i++) {
 
-        const numb = new Map()
+        const deleteMatchArr = []
+        const numb = new Set()
 
         const buffNumb = arr[i].toString().split("").map(Number)
-        buffNumb.forEach(item => numb.set(item))
-
-        const deleteMatch = []
+        buffNumb.forEach(item => numb.add(item))
 
         for (let j = i + 1; j < arr.length; j++) {
 
             const nextNumb = arr[j].toString().split("").map(Number)
 
             if (findMatch(numb, nextNumb)) {
-                deleteMatch.push(j)
+                deleteMatchArr.push(j)
             }
         }
 
-        if (deleteMatch.length > 0) {
-            deleteMatch.forEach((item, index) => arr.splice(item - index, 1))
+        if (deleteMatchArr.length > 0) {
+            deleteMatchArr.forEach((item, index) => arr.splice(item - index, 1))
             arr.splice(i, 1)
             i--
         }
