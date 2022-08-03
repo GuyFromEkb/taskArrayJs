@@ -1,6 +1,6 @@
 // const ARRAY = [9, 3212555]
-// const ARRAY = [13, 41, 55, 61, 1, 84, 27, 37, 39, 55, 519, 309, 77, 132, 213,]
-const ARRAY = [41, 55, 61, 1, 8, 27, 37, 39]
+const ARRAY = [13, 41, 55, 61, 1, 84, 27, 37, 39, 55, 519, 309, 77,8, 132, 213,]
+// const ARRAY = [41, 55, 61, 1, 8, 27, 37, 39]
 
 changeArr(ARRAY)
 
@@ -77,7 +77,8 @@ function reverseAndSquareArr(arr) {
 
     arr.forEach((item, index) => {
 
-        const buff = +item.toString().split("").map(Number).reverse().join("")
+        const buff = +item.toString().split("").reverse().join("")
+        // console.log(buff)
         arr[index] = Math.pow(buff, 2)
 
     })
