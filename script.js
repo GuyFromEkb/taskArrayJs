@@ -1,6 +1,6 @@
 // const ARRAY = [9, 3212555]
-// const ARRAY = [41, 55, 61,/*  1, 8, */ 27, 37, 39, 519, 309, 77, 132,]
-const ARRAY = [41, 55, 61, 1, 8, 27, 37, 39]
+const ARRAY = [8, 41, 55, 61, 1, 8, 27, 37, 39, 55, 519, 309, 77, 132, 213,]
+// const ARRAY = [41, 55, 61, 1, 8, 27, 37, 39]
 
 changeArr(ARRAY)
 
@@ -9,7 +9,7 @@ function changeArr(arr) {
 
     filterArr(arr)
 
-    if (chekToNextStep(startArrLength, arr.length)) return arr
+    if (chekToNextStep(startArrLength, arr.length)) { return arr }
 
     reverseAndSquareArr(arr)
 
@@ -39,10 +39,12 @@ function filterArr(arr) {
             deleteMatch.forEach((item, index) => arr.splice(item - index, 1))
             arr.splice(i, 1)
             i--
+
         }
+        // console.log(arr)
 
     }
-    console.log(ARRAY)
+    console.log(arr)
 }
 
 function findMatch(numb, nextNumb) {
@@ -58,8 +60,8 @@ function findMatch(numb, nextNumb) {
 
             if (!match) {
 
-                match = big[i] === min[j] ? i : false
-                if (match) return match
+                match = big[i] === min[j] ? true : false
+                if (match) { return match }
             }
 
         }
